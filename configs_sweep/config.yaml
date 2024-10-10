@@ -1,0 +1,13 @@
+method: bayes
+metric:
+  goal: maximize
+  name: mIoU
+parameters:    
+  sweep-optim_wrapper-optimizer-type: 
+    values: ['SGD', 'AdamW'] 
+  sweep-optim_wrapper-optimizer-lr:
+    values: [0.0001]
+  sweep-optim_wrapper-optimizer-weight_decay:
+    values: [0.0001, 0.001]   
+  sweep-train_pipeline-type_RandomFlip-prob:
+    values: [[0.0,0.0],[0.25,0.25],[0.5,0]]
